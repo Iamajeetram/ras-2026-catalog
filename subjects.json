@@ -1,0 +1,27 @@
+[
+  {
+    "id": "raj_history",
+    "name": "Rajasthan History",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "raj_geography",
+    "name": "Rajasthan Geography",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "raj_polity",
+    "name": "Rajasthan Polity",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "raj_economy",
+    "name": "Rajasthan Economy",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "current_affairs",
+    "name": "Current Affairs",
+    "status": "ACTIVE"
+  }
+]
