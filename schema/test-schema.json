@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Test Schema",
+  "description": "JSON Schema for RAS 2026 Catalog Test entries",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the test",
+      "pattern": "^[a-z0-9_]+$",
+      "minLength": 3,
+      "maxLength": 50,
+      "examples": [
+        "geo_001",
+        "hist_001",
+        "mock_001"
+      ]
+    },
+    "subjectId": {
+      "type": "string",
+      "description": "Reference to subject from subjects.json",
+      "pattern": "^[a-z0-9_]+$",
+      "examples": [
+        "raj_geography",
+        "raj_history",
+        "current_affairs"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "description": "Test title (can be in English or Hindi or both)",
+      "minLength": 1,
+      "maxLength": 200,
+      "examples": [
+        "राजस्थान की स्थिति एवं विस्तार",
+        "Position and Extent of Rajasthan"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the test",
+      "minLength": 1,
+      "maxLength": 500,
+      "examples": [
+        "RAS Prelims Practice Test - Position and extent of Rajasthan"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of the test",
+      "enum": [
+        "LIVE",
+        "BETA",
+        "ARCHIVED"
+      ],
+      "default": "BETA"
+    },
+    "questionsCount": {
+      "type": "integer",
+      "description": "Number of questions in the test",
+      "minimum": 1,
+      "maximum": 1000,
+      "examples": [
+        100,
+        150,
+        200
+      ]
+    },
+    "duration": {
+      "type": "integer",
+      "description": "Test duration in minutes",
+      "minimum": 1,
+      "maximum": 480,
+      "examples": [
+        120,
+        150,
+        180
+      ]
+    },
+    "totalMarks": {
+      "type": "integer",
+      "description": "Total marks for the test",
+      "minimum": 1,
+      "maximum": 1000,
+      "examples": [
+        100,
+        150,
+        200
+      ]
+    },
+    "githubUrl": {
+      "type": "string",
+      "description": "Raw GitHub URL pointing to the questions JSON file",
+      "format": "uri",
+      "pattern": "^https://raw\\.githubusercontent\\.com/",
+      "examples": [
+        "https://raw.githubusercontent.com/Iamajeetram/ras-2026-questions/main/geography/geo_001.json"
+      ]
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "ISO 8601 timestamp when test was created",
+      "format": "date-time",
+      "examples": [
+        "2026-06-01T00:00:00Z"
+      ]
+    },
+    "updatedAt": {
+      "type": "string",
+      "description": "ISO 8601 timestamp when test was last updated",
+      "format": "date-time",
+      "examples": [
+        "2026-06-03T15:30:00Z"
+      ]
+    },
+    "difficulty": {
+      "type": "string",
+      "description": "Difficulty level of the test",
+      "enum": [
+        "BEGINNER",
+        "INTERMEDIATE",
+        "ADVANCED"
+      ],
+      "default": "INTERMEDIATE"
+    },
+    "language": {
+      "type": "string",
+      "description": "Language(s) in which the test is available",
+      "enum": [
+        "en",
+        "hi",
+        "en-hi"
+      ],
+      "default": "en-hi",
+      "examples": [
+        "en",
+        "hi",
+        "en-hi"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "subjectId",
+    "title",
+    "description",
+    "status",
+    "questionsCount",
+    "duration",
+    "totalMarks",
+    "githubUrl",
+    "createdAt",
+    "updatedAt",
+    "difficulty",
+    "language"
+  ],
+  "additionalProperties": false
+}
